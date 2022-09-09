@@ -7,8 +7,8 @@ import {
   Pressable, 
   Text, 
   VStack 
-} from 'native-base'
-import React from 'react'
+} from 'native-base';
+import React from 'react';
 import Colors from '../color';
 import { MaterialIcons, Ionicons } from '@expo/vector-icons';
 
