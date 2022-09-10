@@ -1,10 +1,10 @@
 import { NativeBaseProvider } from 'native-base';
-import RegisterScreen from './source/screens/RegisterScreen';
+import NotVerifyScreen from './source/screens/NotVerifyScreen';
 
 export default function App() {
   return (
     <NativeBaseProvider>
-      <RegisterScreen />
+      <NotVerifyScreen />
     </NativeBaseProvider>
   )
   

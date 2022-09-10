@@ -3,12 +3,15 @@ const Colors = {
     white: '#fff',
     black: '#000',
     lightBlack: '#bcbcbc',
-    orange: '#ffce31',
+    mustard: '#a39764',
     red: '#ff0000',
+    pinkDust: '#ad8e87',
+    goldDust: '#a69470',
     gray: '#f4f4f4',
     subGreen: '#eefae6',
     deepGray: '#c4c4c4',
-    blue: '#3b87f9',
+    blueDust: '#8cc7cc',
+    grapeDust: '#a195c7',
     underline: '#e5e5e5',
     paypal: '#ffb730'
 };
