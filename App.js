@@ -1,10 +1,10 @@
 import { NativeBaseProvider } from 'native-base';
-import NotVerifyScreen from './source/screens/NotVerifyScreen';
+import HomeScreen from './source/screens/HomeScreen';
 
 export default function App() {
   return (
     <NativeBaseProvider>
-      <NotVerifyScreen />
+      <HomeScreen />
     </NativeBaseProvider>
   )
   
