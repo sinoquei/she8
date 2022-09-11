@@ -1,7 +1,8 @@
-import { Flex, Image, Pressable, ScrollView, Text } from 'native-base';
+import { Box, Center, Flex, Heading, Image, Pressable, ScrollView, Text } from 'native-base';
 import React from 'react';
 import products from '../data/Products';
 import Colors from '../color';
+import Rating from './Rating';
 
 const HomeProducts = () => {
   return (
@@ -15,7 +16,7 @@ const HomeProducts = () => {
             {products.map((product) => (
                     <Pressable 
                         key={product.id} 
-                        w='45%' 
+                        w='47%' 
                         bg={Colors.white} 
                         rounded='md' 
                         shadow={2} 
@@ -24,13 +25,22 @@ const HomeProducts = () => {
                         pb={2}
                         overflow='hidden'
                     >
-                        <Image 
-                            source={product.image}
-                            alt={product.name} 
-                            width='full'
-                            height={24}
-                            resizeMode='contain'
-                        />
+                        <Center>
+                            <Image 
+                                source={product.image}
+                                alt={product.name} 
+                                width='full'
+                                height={24}
+                                size='xl'
+                                resizeMode='contain'
+                            />
+                        </Center>
+                        <Box px={4} pt={1}>
+                            <Heading size='sm' bold>${product.price}</Heading>
+                            <Text fontSize={10} mt={1} isTruncated w='full'>{product.name}</Text>
+                            {/* rating  ask stacy if you can mix components from different libraries with each other */}
+                            <Rating />
+                        </Box>
                     </Pressable>
                 ))}
         </Flex>
