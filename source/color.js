@@ -5,6 +5,7 @@ const Colors = {
     lightBlack: '#bcbcbc',
     mustard: '#a39764',
     red: '#ff0000',
+    redDust: '#E5CBC5',
     pinkDust: '#ad8e87',
     goldDust: '#a69470',
     gray: '#f4f4f4',
