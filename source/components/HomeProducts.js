@@ -3,32 +3,35 @@ import React from 'react';
 import products from '../data/Products';
 import Colors from '../color';
 import Rating from './Rating';
+import { useNavigation } from '@react-navigation/native';
 
 const HomeProducts = () => {
-  return (
-    <ScrollView flex={1} showsVerticalScrollIndicator={false}>
-        <Flex 
-            flexWrap='wrap' 
-            direction='row' 
-            justifyContent='space-between' 
-            px={6}
-        >
-            {products.map((product) => (
-                    <Pressable 
-                        key={product.id} 
-                        w='47%' 
-                        bg={Colors.white} 
-                        rounded='md' 
-                        shadow={2} 
+    const navigation = useNavigation();
+    return (
+        <ScrollView flex={1} showsVerticalScrollIndicator={false}>
+            <Flex
+                flexWrap='wrap'
+                direction='row'
+                justifyContent='space-between'
+                px={6}
+            >
+                {products.map((product) => (
+                    <Pressable
+                        onPress={() => navigation.navigate('Single', product)}
+                        key={product.id}
+                        w='47%'
+                        bg={Colors.white}
+                        rounded='md'
+                        shadow={2}
                         pt={0}
                         my={3}
                         pb={2}
                         overflow='hidden'
                     >
                         <Center>
-                            <Image 
+                            <Image
                                 source={product.image}
-                                alt={product.name} 
+                                alt={product.name}
                                 width='full'
                                 height={24}
                                 size='xl'
@@ -42,9 +45,9 @@ const HomeProducts = () => {
                         </Box>
                     </Pressable>
                 ))}
-        </Flex>
-    </ScrollView>
-  )
+            </Flex>
+        </ScrollView>
+    )
 }
 
 

@@ -37,7 +37,7 @@ const products = [
         image: require('../../assets/images/4.png'),
         description: 'Cupidatat deserunt aliquip consectetur voluptate commodo qui sit nostrud in incididunt veniam.',
         price: 98,
-        countInStock: 6,
+        countInStock: 0,
         rating: 4,
         numReviews: 5
     },
@@ -77,7 +77,7 @@ const products = [
         image: require('../../assets/images/8.png'),
         description: 'Cupidatat deserunt aliquip consectetur voluptate commodo qui sit nostrud in incididunt veniam.',
         price: 45,
-        countInStock: 5,
+        countInStock: 0,
         rating: 5,
         numReviews: 4
     },

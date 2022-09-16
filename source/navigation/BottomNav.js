@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
-import HomeScreen from '../screens/HomeScreen';
+import StackNav from './StackNav';
 import ProfileScreen from '../screens/ProfileScreen';
 import CartScreen from '../screens/CartScreen';
 import { Center, Pressable } from 'native-base';
@@ -26,7 +26,7 @@ const CustomTab = ({children, onPress}) => (
 const BottomNav = () => {
   return (
    <Tab.Navigator 
-    backBehavior='main' 
+    backBehavior='Main' 
     initialRouteName='Main' 
     screenOptions={{
         tabBarShowLabel: false, 
@@ -37,7 +37,7 @@ const BottomNav = () => {
     >
         <Tab.Screen 
             name='Main' 
-            component={HomeScreen} 
+            component={StackNav} 
             options={{
                 tabBarIcon: ({ focused }) => (
                     <Center>

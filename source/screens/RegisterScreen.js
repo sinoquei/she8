@@ -12,7 +12,7 @@ import React from 'react';
 import Colors from '../color';
 import { MaterialIcons, Ionicons, FontAwesome } from '@expo/vector-icons';
 
-const RegisterScreen = () => {
+const RegisterScreen = ({ navigation }) => {
   return (
     <Box flex={1} bg={Colors.black}>
         <Image flex={1} alt='Logo'
@@ -80,10 +80,11 @@ const RegisterScreen = () => {
             rounded={50} 
             bg={Colors.main}
             _text={{ color: Colors.white }}
+            onPress={() => navigation.navigate('Bottom')}
           >
             SIGN UP
           </Button>
-          <Pressable mt={4}>
+          <Pressable mt={4} onPress={() => navigation.navigate('Login')}>
             <Text color={Colors.deepGray}>LOGIN</Text>
           </Pressable>
         </Box>

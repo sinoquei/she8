@@ -14,6 +14,7 @@ import React from 'react'
 import ButtonOne from '../components/Button';
 import Colors from '../color';
 import { Ionicons, FontAwesome } from '@expo/vector-icons'
+import { useNavigation } from '@react-navigation/native';
 
 
 const paymentMethods = [
@@ -35,6 +36,8 @@ const paymentMethods = [
 ]
 
 const PaymentScreen = () => {
+  const navigation = useNavigation();
+
   return (
     <Box flex={1} safeAreaTop bg={Colors.main} py={5}>
       {/* header */}
@@ -79,7 +82,12 @@ const PaymentScreen = () => {
                 />}
               </HStack>
             ))}
-            <ButtonOne bg={Colors.main} color={Colors.white} mt={5}>
+            <ButtonOne 
+              bg={Colors.main} 
+              color={Colors.white} 
+              mt={5}
+              onPress={() => navigation.navigate('Placeorder')}
+            >
               CONTINUE
             </ButtonOne>
             <Text italic textAlign='center'>
