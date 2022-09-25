@@ -7,7 +7,7 @@ import Colors from '../color';
 
 const Swiper = () => (
     <SwipeListView 
-        rightOpenValue={50}
+        rightOpenValue={-40}
         previewRowKey='0'
         previewOpenValue={-40}
         previewOpenDelay={3000}

@@ -5,39 +5,42 @@ import LoginScreen from './source/screens/LoginScreen';
 import RegisterScreen from './source/screens/RegisterScreen';
 import OrderScreen from './source/screens/OrderScreen';
 import BottomNav from './source/navigation/BottomNav';
+import { CartProvider } from 'react-use-cart';
 
 const Stack = createNativeStackNavigator()
 
 export default function App() {
   return (
-    <NativeBaseProvider>
-      <NavigationContainer>
-        <StatusBar hidden={true} />
-        <Stack.Navigator 
-          initialRouteName='Login' 
-          screenOptions={{
-          headerShown:false
-        }}
-        >
-          <Stack.Screen 
-            name='Login'
-            component={LoginScreen}
-          />
-          <Stack.Screen 
-            name='Register'
-            component={RegisterScreen}
-          />
-          <Stack.Screen 
-            name='Order'
-            component={OrderScreen}
-          />
-          <Stack.Screen 
-            name='Bottom'
-            component={BottomNav}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </NativeBaseProvider>
+    <CartProvider>
+      <NativeBaseProvider>
+        <NavigationContainer>
+          <StatusBar hidden={true} />
+          <Stack.Navigator 
+            initialRouteName='Login' 
+            screenOptions={{
+            headerShown:false
+          }}
+          >
+            <Stack.Screen 
+              name='Login'
+              component={LoginScreen}
+            />
+            <Stack.Screen 
+              name='Register'
+              component={RegisterScreen}
+            />
+            <Stack.Screen 
+              name='Order'
+              component={OrderScreen}
+            />
+            <Stack.Screen 
+              name='Bottom'
+              component={BottomNav}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </NativeBaseProvider>
+    </CartProvider>
   )
   
 }

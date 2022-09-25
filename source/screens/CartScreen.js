@@ -19,8 +19,7 @@ const CartScreen = () => {
         </Center>
         {/* if cart is empty
         <CartEmpty /> */}
-        {/* cart items */}
-        <ScrollView showsVerticalScrollIndicator={false}>
+        {/* cart items */}      
           <CartItems />
           {/* buttons */}
           <Center mt={5}>
@@ -62,7 +61,6 @@ const CartScreen = () => {
               CHECKOUT
             </ButtonOne>
           </Center>
-        </ScrollView>
     </Box>
   );
 }
