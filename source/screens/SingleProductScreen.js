@@ -7,11 +7,13 @@ import Rating from '../components/Rating';
 import ButtonOne from '../components/Button';
 import Review from '../components/Review';
 import { useNavigation } from '@react-navigation/native';
+import { useCart } from 'react-use-cart';
 
 const SingleProductScreen = ({ route }) => {
   const [value, setValue] = useState(0);
   const navigation = useNavigation();
-  const product = route.params
+  const product = route.params;
+  const { addItem } = useCart();
 
   return (
     <Box safeArea flex={1} bg={Colors.white}>
@@ -58,9 +60,10 @@ const SingleProductScreen = ({ route }) => {
               color={Colors.white} 
               mt={10}
               onPress={() => navigation.navigate('Cart')}
+              onClick={() => addItem(item)}
               >
                 ADD TO CART
-              </ButtonOne>
+            </ButtonOne>
             {/* REVIEW */}
             <Review />
         </ScrollView>

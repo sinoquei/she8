@@ -4,6 +4,17 @@ import { SwipeListView } from 'react-native-swipe-list-view'
 import { FontAwesome } from '@expo/vector-icons';
 import products from '../data/Products';
 import Colors from '../color';
+import { useCart } from 'react-use-cart';
+
+const { 
+    isEmpty, 
+    totalItems, 
+    totalUniqueItems, 
+    items, 
+    updateItemQuantity, 
+    removeItem, 
+    cartTotal
+} = useCart();
 
 const Swiper = () => (
     <SwipeListView 
@@ -11,7 +22,7 @@ const Swiper = () => (
         previewRowKey='0'
         previewOpenValue={-40}
         previewOpenDelay={3000}
-        data={products.slice(0, 3)}
+        data={items}
         renderItem={renderitem}
         renderHiddenItem={hiddenItem}
         showsVerticalScrollIndicator={false}
@@ -49,7 +60,7 @@ const renderitem = (data) => (
                         _pressed={{ bg: Colors.main }}
                         _text={{ color:Colors.white }}
                     >
-                        5                   
+                        {items}                   
                     </Button>
                 </Center>
             </HStack>
@@ -68,12 +79,14 @@ const hiddenItem = () => (
         ml='auto' 
         justifyContent='center'
         bg={Colors.red}
+        onClick={() => removeItem(items.id)}
     >
             <Center alignItems='center' space={2}>
                 <FontAwesome 
                     name='trash'
                     size={24}
                     color={Colors.white}
+                    
                 />
             </Center>
     </Pressable>

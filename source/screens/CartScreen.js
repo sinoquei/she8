@@ -5,9 +5,13 @@ import Colors from '../color';
 import ButtonOne from '../components/Button';
 import CartEmpty from '../components/CartEmpty';
 import CartItems from '../components/CartItems';
+import { useCart } from 'react-use-cart';
 
 const CartScreen = () => {
   const navigation = useNavigation();
+  const { cartTotal, isEmpty } = useCart();
+
+  if (isEmpty) return <CartEmpty />
 
   return (
     <Box flex={1} safeAreaTop bg={Colors.subGreen}>
@@ -17,8 +21,6 @@ const CartScreen = () => {
             Cart
           </Text>
         </Center>
-        {/* if cart is empty
-        <CartEmpty /> */}
         {/* cart items */}      
           <CartItems />
           {/* buttons */}
@@ -47,7 +49,7 @@ const CartScreen = () => {
                   bg: Colors.main
                 }}
               >
-                $356
+                {cartTotal}
               </Button>
             </HStack>
           </Center>
